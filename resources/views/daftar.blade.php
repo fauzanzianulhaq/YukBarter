@@ -8,7 +8,8 @@
     <title>Daftar YukBarter</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body> 
+    {{-- ututu --}}
     <div class="register-container">
         <div class="register-box">
             <h2>Daftar</h2>
