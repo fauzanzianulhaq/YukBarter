@@ -12,8 +12,8 @@
     <div class="container">
         <img src="/images/logo_yukbarter.png" alt="" width="190px" class="logo_atas">
         <div class="masuk_daftar">
-            <button class="btn btn-primary" type="submit">Masuk</button>
-            <button class="btn btn-primary" type="submit">Daftar</button>
+            <a href="login"><button class="btn btn-primary" type="submit">Masuk</button></a>
+            <a href="daftar"><button class="btn btn-primary" type="submit">Daftar</button></a>
         </div>
     </div>
     
