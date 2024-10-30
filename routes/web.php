@@ -22,3 +22,6 @@ Route::get('/login', function () {
 Route::get('/daftar', function () {
     return view('daftar');
 });
+Route::get('/berandaUser', function () {
+    return view('user/beranda');
+});
