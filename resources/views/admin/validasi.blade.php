@@ -15,7 +15,7 @@
             <nav style="margin-left: 40px">
                 <ul>
                     <li><a href="#">🏠 Beranda</a></li>
-                    <li><a href="validasi">🗃️ Validasi</a></li>
+                    <li><a href="#">🗃️ Validasi</a></li>
                     <li><a href="#">📦 Kategori</a></li>
                     <li><a href="#">⭐ Rating</a></li>
                     <li><a href="#">👤 Profil</a></li>
@@ -24,32 +24,6 @@
         </aside>
 
         <main class="main-content">
-            <div class="stat-cards">
-                <div class="stat-card">
-                    <p>Total User</p>
-                    <h3>300</h3>
-                </div>
-                <div class="stat-card">
-                    <p>Barang Paling Banyak Diposting</p>
-                    <h3>Buku</h3>
-                </div>
-                <div class="stat-card">
-                    <p>Kategori Barang Populer</p>
-                    <h3>Elektronik</h3>
-                </div>
-                <div class="stat-card">
-                    <p>Postingan Hari ini</p>
-                    <h3>100</h3>
-                </div>
-                <div class="stat-card">
-                    <p>Postingan Bulan ini</p>
-                    <h3>300</h3>
-                </div>
-                <div class="stat-card">
-                    <p>Postingan Tahun ini</p>
-                    <h3>1000</h3>
-                </div>
-            </div>
 
             <div class="post-table">
                 <h3>Postingan Bulan Ini</h3>

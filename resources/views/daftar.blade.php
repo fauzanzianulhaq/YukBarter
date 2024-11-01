@@ -14,24 +14,38 @@
         <div class="register-box">
             <h2>Daftar</h2>
             <p>Sudah Memiliki Akun? <a href="login">Login Disini</a></p>
-            <form>
+            <form action="{{ route('daftar.custom') }}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <label for="name">Nama</label>
-                <input type="text" id="name" placeholder="Nama">
+                <input type="text" id="name" name="name" placeholder="Nama">
                 
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Email">
+                <input type="email" id="email" name="email" placeholder="Email">
                 
                 <label for="photo">Foto KTM</label>
-                <input type="file" id="photo">
+                <input type="file" id="foto_ktm" name="foto_ktm" accept=".jpg,.jpeg,.png" required>
                 <small>Hanya Mendukung Format JPG, JPEG, PNG Dengan Maksimal 1024x768px</small>
                 
                 <label for="password">Password</label>
+                <label for="password">Password</label>
                 <div class="password-container">
-                    <input type="password" id="password" placeholder="Password">
+                    <input type="password" id="password" name="password" placeholder="Password">
                     <span class="toggle-password">&#128065;</span>
+
                 </div>
-                
+                <label for="password_confirmation">Konfirmasi Password</label>
+                <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Konfirmasi Password">
                 <button type="submit" style="margin-top: 20px">Daftar</button>
+                @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
             </form>
         </div>
     </div>

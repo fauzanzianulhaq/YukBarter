@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 /*
@@ -21,10 +22,16 @@ Route::get('/', function () {
 // });
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
+
+// Route::get('/daftar', function () {
+//     return view('daftar');
+// });
 Route::get('/daftar', function () {
     return view('daftar');
-});
+})->name('daftar');
+
+Route::post('/daftar', [AuthController::class, 'daftar'])->name('daftar.custom');
 Route::get('/berandaUser', function () {
     return view('user/beranda');
 });
@@ -36,6 +43,10 @@ Route::get('/berandaUser', function () {
 Route::get('/admin/beranda', function () {
     return view('admin.beranda');
 })->name('admin.beranda')->middleware('role:admin');
+Route::get('/admin/validasi', function () {
+    return view('admin.validasi');
+})->name('admin.beranda');
+
 
 Route::get('/user/beranda', function () {
     return view('user.beranda');
