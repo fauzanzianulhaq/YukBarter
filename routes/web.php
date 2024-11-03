@@ -45,7 +45,32 @@ Route::get('/admin/beranda', function () {
 })->name('admin.beranda')->middleware('role:admin');
 Route::get('/admin/validasi', function () {
     return view('admin.validasi');
-})->name('admin.beranda');
+});
+Route::get('/admin/validasi-detail', function () {
+    return view('admin.detail_validasi');
+});
+Route::get('/admin/kategori', function () {
+    return view('admin.kategori');
+});
+Route::get('/admin/rating', function () {
+    return view('admin.rating');
+});
+Route::get('/admin/rating-detail', function () {
+    return view('admin.detail_rating');
+});
+Route::get('/admin/kategori-tambah', function () {
+    return view('admin.tambah_kategori');
+});
+Route::get('/admin/profile', function () {
+    return view('admin.profile');
+});
+Route::get('/admin/profile-avatar', function () {
+    return view('admin.avatar_profile');
+});
+Route::get('/admin/profile-password', function () {
+    return view('admin.password_profile');
+});
+
 
 
 Route::get('/user/beranda', function () {

@@ -100,98 +100,63 @@
         </ul>
       </div>
   
-      {{-- <div class="content">
-        <div class="container-fluid">
-          <div class="row mb-4 justify-content-center">
-          <div class="card table-card"> <!-- Added a new class "table-card" -->
-            <div class="card-header">Postingan Bulan Ini</div>
-            <div class="card-body">
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th>No</th>
-                    <th>Nama Barang</th>
-                    <th>Kategori</th>
-                    <th>Nama User</th>
-                    <th>Status</th>
-                    <th>Detail</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>SSD 14 GB</td>
-                    <td>Elektronik</td>
-                    <td>Fadil Nugroho</td>
-                    <td><button type="button" class="btn btn-warning">Pending</button></td>
-                    <td><a href="validasi-detail">lihat</a></td>
-                  </tr>
-                </tbody>
-              </table>
-              <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                    <a class="page-link" href="#">Previous</a>
-                  </li>
-                  <li class="page-item active">
-                    <a class="page-link" href="#">1</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
+      <div class="content">
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5>Daftar Kategori</h5>
+                        <a href="kategori-tambah"><button class="btn btn-dark"><i class="fas fa-plus"></i> Tambah</button></a>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Cari Berdasarkan Nama Kategori">
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Kategori</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Elektronik</td>
+                                    <td><span class="badge badge-dark">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Buku</td>
+                                    <td><span class="badge badge-dark">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Previous</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div> --}}
-        <div class="content">
-          <div class="container-fluid">
-              <div class="card">
-                  <div class="card-header d-flex justify-content-between align-items-center">
-                      <h5>Validasi Barang</h5>
-                  </div>
-                  <div class="card-body">
-                      {{-- <div class="mb-3">
-                          <input type="text" class="form-control" placeholder="Cari Berdasarkan Nama Kategori">
-                      </div> --}}
-                      <table class="table table-bordered table-striped">
-                          <thead>
-                              <tr>
-                                <th>No</th>
-                                <th>Nama Barang</th>
-                                <th>Kategori</th>
-                                <th>Nama User</th>
-                                <th>Status</th>
-                                <th>Detail</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                <td>1</td>
-                                <td>SSD 14 GB</td>
-                                <td>Elektronik</td>
-                                <td>Fadil Nugroho</td>
-                                <td><button type="button" class="btn btn-warning">Pending</button></td>
-                                <td><a href="validasi-detail">lihat</a></td>
-                              </tr>
-                          </tbody>
-                      </table>
-                      <nav aria-label="Page navigation">
-                          <ul class="pagination justify-content-center">
-                              <li class="page-item">
-                                  <a class="page-link" href="#">Previous</a>
-                              </li>
-                              <li class="page-item active">
-                                  <a class="page-link" href="#">1</a>
-                              </li>
-                              <li class="page-item">
-                                  <a class="page-link" href="#">Next</a>
-                              </li>
-                          </ul>
-                      </nav>
-                  </div>
-              </div>
-          </div>
         <footer class="text-center mt-4">
           <p>&copy; 2024 All Right Reserved YukBarter.xyz</p>
         </footer>
