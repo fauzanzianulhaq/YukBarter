@@ -83,67 +83,22 @@
         <h4 class="p-3">YukBarter</h4>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-home"></i> Beranda</a>
+            <a class="nav-link" href="beranda"><i class="fas fa-home"></i> Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-tasks"></i> Validasi</a>
+            <a class="nav-link" href="validasi"><i class="fas fa-tasks"></i> Validasi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-th-large"></i> Kategori</a>
+            <a class="nav-link" href="kategori"><i class="fas fa-th-large"></i> Kategori</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-star"></i> Rating</a>
+            <a class="nav-link" href="rating"><i class="fas fa-star"></i> Rating</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-user"></i> Profil</a>
+            <a class="nav-link" href="profile"><i class="fas fa-user"></i> Profil</a>
           </li>
         </ul>
       </div>
-  
-      {{-- <div class="content">
-        <div class="container-fluid">
-          <div class="row mb-4 justify-content-center">
-          <div class="card table-card"> <!-- Added a new class "table-card" -->
-            <div class="card-header">Postingan Bulan Ini</div>
-            <div class="card-body">
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th>No</th>
-                    <th>Nama Barang</th>
-                    <th>Kategori</th>
-                    <th>Nama User</th>
-                    <th>Status</th>
-                    <th>Detail</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>SSD 14 GB</td>
-                    <td>Elektronik</td>
-                    <td>Fadil Nugroho</td>
-                    <td><button type="button" class="btn btn-warning">Pending</button></td>
-                    <td><a href="validasi-detail">lihat</a></td>
-                  </tr>
-                </tbody>
-              </table>
-              <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                    <a class="page-link" href="#">Previous</a>
-                  </li>
-                  <li class="page-item active">
-                    <a class="page-link" href="#">1</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div> --}}
         <div class="content">
           <div class="container-fluid">
               <div class="card">
