@@ -72,10 +72,19 @@ Route::get('/admin/profile-password', function () {
 });
 
 
-
 Route::get('/user/beranda', function () {
     return view('user.beranda');
 })->name('user.beranda')->middleware('role:user');
+Route::get('/user/profile', function () {
+    return view('user.profile');
+});
+Route::get('/user/profile-avatar', function () {
+    return view('user.avatar_profile');
+});
+Route::get('/user/profile-password', function () {
+    return view('user.password_profile');
+});
+
 
 Route::post('/custom-login', [SessionController::class, 'login'])->name('custom.login');
 
