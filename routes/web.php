@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 /*
@@ -46,21 +47,25 @@ Route::get('/admin/beranda', function () {
 Route::get('/admin/validasi', function () {
     return view('admin.validasi');
 });
-Route::get('/admin/validasi-detail', function () {
+Route::get('/admin/validasi-detail',  function () {
     return view('admin.detail_validasi');
 });
-Route::get('/admin/kategori', function () {
-    return view('admin.kategori');
-});
+
+
 Route::get('/admin/rating', function () {
     return view('admin.rating');
 });
 Route::get('/admin/rating-detail', function () {
     return view('admin.detail_rating');
 });
-Route::get('/admin/kategori-tambah', function () {
+Route::get('/admin/kategori/tambah', function () {
     return view('admin.tambah_kategori');
 });
+// Route::get('/admin/kategori', function () {
+//     return view('admin.kategori');
+// });
+Route::get('/admin/kategori', [KategoriController::class, 'kategori']);
+Route::post('/admin/kategori/tambah/submit', [KategoriController::class, 'submit'])->name('kategori.submit');
 Route::get('/admin/profile', function () {
     return view('admin.profile');
 });
@@ -84,7 +89,9 @@ Route::get('/user/profile-avatar', function () {
 Route::get('/user/profile-password', function () {
     return view('user.password_profile');
 });
-
+Route::get('/user/jelajahi-barang', function () {
+    return view('user.jelajahiBarang');
+});
 
 Route::post('/custom-login', [SessionController::class, 'login'])->name('custom.login');
 

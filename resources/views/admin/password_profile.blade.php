@@ -52,6 +52,9 @@
             <div class="left-section">
                 <p><strong>Nama</strong><br>Fadli Permana</p>
                 <p><strong>Email</strong><br>fadli123@gmail.com</p>
+                <div class="button-group">
+                  <button class="resett-button">Logout</button>
+              </div>
             </div>
             
             <div class="right-section">

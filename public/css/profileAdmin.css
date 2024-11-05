@@ -197,6 +197,14 @@ input[type="text"] {
   border-radius: 4px;
   cursor: pointer;
 }
+.resett-button {
+  background-color: #ff4d4d;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 .cancel-button {
   background-color: #ff4d4d;

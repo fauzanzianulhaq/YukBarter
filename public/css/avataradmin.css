@@ -21,6 +21,14 @@
     color: #333;
     padding: 10px 15px;
   }
+  .resett-button {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
   
   .sidebar .nav-link i {
     margin-right: 10px;

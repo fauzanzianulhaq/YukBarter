@@ -105,7 +105,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h5>Daftar Kategori</h5>
-                        <a href="kategori-tambah"><button class="btn btn-dark"><i class="fas fa-plus"></i> Tambah</button></a>
+                        <a href="kategori/tambah"><button class="btn btn-dark"><i class="fas fa-plus"></i> Tambah</button></a>
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
@@ -116,29 +116,22 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Kategori</th>
-                                    <th>Status</th>
+                                    {{-- <th>Status</th> --}}
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($kategori as $no=>$data)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Elektronik</td>
+                                    <td>{{ $no+1 }}</td>
+                                    <td>{{ $data->nama }}</td>
                                     <td><span class="badge badge-dark">Aktif</span></td>
                                     <td>
                                         <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
                                         <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Buku</td>
-                                    <td><span class="badge badge-dark">Aktif</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
-                                        <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                         <nav aria-label="Page navigation">

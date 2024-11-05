@@ -39,10 +39,11 @@
                         <button class="btn btn-dark" onclick="history.back()">Kembali</button>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form action="{{ route('kategori.submit') }}" method="POST">
+                          @csrf
                             <div class="form-group">
-                              <label for="name">Nama</label>
-                              <input type="text" class="form-control" id="name" name="name" placeholder="Masukan Nama Kategori">
+                              <label for="nama">Nama</label>
+                              <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan Nama Kategori">
                             </div>
                             <button type="submit" class="btn btn-primary">Kirim</button>
                           </form>
