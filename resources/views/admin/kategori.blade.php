@@ -125,11 +125,18 @@
                                 <tr>
                                     <td>{{ $no+1 }}</td>
                                     <td>{{ $data->nama }}</td>
-                                    <td><span class="badge badge-dark">Aktif</span></td>
                                     <td>
-                                        <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
-                                        <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                        <div class="button-group">
+                                            <a href="{{ route('kategori.edit', $data->id) }}">
+                                                <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
+                                            </a>
+                                            <form action="{{ route('kategori.delete', $data->id) }}" method="POST" style="display: inline;">
+                                                @csrf
+                                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </form>
+                                        </div>
                                     </td>
+                                    
                                 </tr>
                                 @endforeach
                             </tbody>
