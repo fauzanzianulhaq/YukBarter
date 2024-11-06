@@ -95,6 +95,9 @@ Route::get('/user/profile-password', function () {
 Route::get('/user/jelajahi-barang', function () {
     return view('user.jelajahiBarang');
 });
+Route::get('/user/jelajahi-barang-detail', function () {
+    return view('user.detailBarang');
+});
 
 Route::post('/custom-login', [SessionController::class, 'login'])->name('custom.login');
 

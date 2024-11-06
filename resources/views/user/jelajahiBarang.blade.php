@@ -42,7 +42,7 @@
                   <div class="card">
                       <div class="card-body text-center">
                           <h5 class="card-title">iMac Late 2015</h5>
-                          <p class="text-muted">Core i5, 8GB, 1TB, Retina Display</p>                                                  
+                          {{-- <p class="text-muted">Core i5, 8GB, 1TB, Retina Display</p>                                                   --}}
                           <img class="card-img-top" src="" alt="">
                           <div class="rating">
                             <i class="fas fa-star"></i>
@@ -52,9 +52,14 @@
                             <i class="far fa-star"></i> <!-- Bintang kosong untuk rating 4 -->
                           </div>    
                         </div>
+                        <div class="card-footer-0">
+                          <a href="jelajahi-barang-detail" class="btn btn-custom" id="detailBtn">
+                            Detail Barang
+                          </a>
+                        </div>
                       <div class="card-footer">
                         <a href="https://wa.me/6283818988014?text=Halo,%20saya%20tertarik%20dengan%20iMac%20Late%202015%20yang%20Anda%20jual." target="_blank" class="btn btn-custom">
-                          Chat Penjual
+                          Chat Pemilik
                         </a>
                     </div>
                   </div>
@@ -64,7 +69,7 @@
                   <div class="card">
                       <div class="card-body text-center">
                           <h5 class="card-title">Fantech Mouse Gamer</h5>
-                          <p class="text-muted">5-in-1 High Speed, Bluetooth Wireless</p>                          
+                          {{-- <p class="text-muted">5-in-1 High Speed, Bluetooth Wireless</p>                           --}}
                           <img class="card-img-top" src="" alt="">
                           <div class="rating">
                             <i class="fas fa-star"></i>
@@ -74,9 +79,14 @@
                             <i class="far fa-star"></i> <!-- Bintang kosong -->
                           </div>  
                         </div>
+                        <div class="card-footer-0">
+                          <a href="jelajahi-barang-detail" class="btn btn-custom" id="detailBtn">
+                            Detail Barang
+                          </a>
+                        </div>
                       <div class="card-footer">
                         <a href="https://wa.me/6283818988014?text=Halo,%20saya%20tertarik%20dengan%20iMac%20Late%202015%20yang%20Anda%20jual." target="_blank" class="btn btn-custom">
-                          Chat Penjual
+                          Chat Pemilik
                         </a>
                     </div>
                   </div>
@@ -86,7 +96,7 @@
                   <div class="card">
                       <div class="card-body text-center">
                           <h5 class="card-title">Apple iMac Mini</h5>
-                          <p class="text-muted">Core i7, 16GB, USB port</p>                        
+                          {{-- <p class="text-muted">Core i7, 16GB, USB port</p>                         --}}
                           <img class="card-img-top" src="" alt="">
                           <div class="rating">
                             <i class="fas fa-star"></i>
@@ -96,9 +106,14 @@
                             <i class="far fa-star"></i> <!-- Bintang kosong untuk rating 4 -->
                           </div>
                         </div>
+                        <div class="card-footer-0">
+                          <a href="jelajahi-barang-detail" class="btn btn-custom" id="detailBtn">
+                            Detail Barang
+                          </a>
+                        </div>
                       <div class="card-footer">
                         <a href="https://wa.me/6283818988014?text=Halo,%20saya%20tertarik%20dengan%20iMac%20Late%202015%20yang%20Anda%20jual." target="_blank" class="btn btn-custom">
-                          Chat Penjual
+                          Chat Pemilik
                         </a>
                     </div>
                   </div>
@@ -108,7 +123,7 @@
                   <div class="card w-100">
                       <div class="card-body text-center">
                           <h5 class="card-title">Sony RKD Headphone</h5>
-                          <p class="text-muted">High Sound Quality, Double Bass</p>
+                          {{-- <p class="text-muted">High Sound Quality, Double Bass</p> --}}
                           <img class="card-img-top" src="" alt="">
                           <div class="rating">
                             <i class="fas fa-star"></i>
@@ -118,9 +133,14 @@
                             <i class="far fa-star"></i> <!-- Bintang kosong untuk rating 3 -->
                           </div>  
                         </div>
+                        <div class="card-footer-0">
+                          <a href="jelajahi-barang-detail" class="btn btn-custom" id="detailBtn">
+                            Detail Barang
+                          </a>
+                        </div>
                       <div class="card-footer">
                         <a href="https://wa.me/6283818988014?text=Halo,%20saya%20tertarik%20dengan%20iMac%20Late%202015%20yang%20Anda%20jual." target="_blank" class="btn btn-custom">
-                          Chat Penjual
+                          Chat Pemilik
                         </a>
                     </div>
                   </div>

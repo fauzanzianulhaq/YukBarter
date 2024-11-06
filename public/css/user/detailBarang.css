@@ -46,7 +46,7 @@
 
 /* Info Cards */
 .info-card {
-    border: 1px solid #ced4da;
+    border: none;
     border-radius: 5px;
     padding: 20px;
     text-align: center;
@@ -82,6 +82,7 @@
 }
 
 .card {
+    border: none;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -132,11 +133,6 @@
     color: #ffc107; /* Warna bintang (kuning) */
 }
 
-#detailBtn{
-    border-radius: 0;
-    background-color:#676666;
-}
-#detailBtn:hover {
-    background-color:#5b5a5a;
-    color: #333;
+.card-detail {
+    text-underline-position: below;
 }
