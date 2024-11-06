@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rating</title>
+    <title>YukBarter</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="/css/user/profileUser.css">
@@ -11,16 +11,16 @@
 <body>
     <div class="main-container">
         <div class="sidebar bg-light border-right">
-            <h4 class="p-3">YukBarter</h4>
+          <img src="/images/logo_yukbarter.png" alt="" width="190px" class="logo_atas">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-home"></i> Beranda</a>
+                <a class="nav-link" href="beranda"><i class="fas fa-home"></i> Beranda</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-tasks"></i> Jelajahi Barang</a>
+                <a class="nav-link" href="jelajahi-barang"><i class="fas fa-search"></i> Jelajahi Barang</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-user"></i> Profil</a>
+                <a class="nav-link" href="profile"><i class="fas fa-user"></i> Profil</a>
               </li>
             </ul>
           </div>
