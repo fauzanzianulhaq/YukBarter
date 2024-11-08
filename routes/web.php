@@ -4,6 +4,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\UploadController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,9 +82,17 @@ Route::get('/admin/profile-password', function () {
 });
 
 
-Route::get('/user/beranda', function () {
-    return view('user.beranda');
-})->name('user.beranda')->middleware('role:user');
+// USER
+
+
+
+// Route::get('/user/beranda', function () {
+//     return view('user.beranda');
+// })->name('user.beranda')->middleware('role:user');
+Route::get('/user/beranda', [UploadController::class, 'upload'])->name('user.beranda')->middleware('role:user');
+Route::post('/user/beranda/tambah/submit', [UploadController::class, 'submit'])->name('upload.submit');
+Route::get('/user/beranda/tambah', [UploadController::class, 'create'])->name('user.create');
+
 Route::get('/user/profile', function () {
     return view('user.profile');
 });

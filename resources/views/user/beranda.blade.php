@@ -33,9 +33,9 @@
             <div class="card">
               <div class="card-header d-flex justify-content-between align-items-center">
                 <p class="flex-grow-1" mb-0>List Barang</p>
-                <button class="btn btn-outline-primary">
+                <a href="beranda/tambah"><button class="btn btn-outline-primary">
                   <i class="fas fa-plus"></i> Tambah Barang
-                </button>
+                </button></a>
               </div>              
               <div class="card-body">
                 <table class="table table-bordered">
@@ -50,16 +50,18 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($upload as $no=>$data)
                   <tr>
-                    <td>1</td>
-                    <td>SSD 14 GB</td>
-                    <td>Elektronik</td>
-                    <td>Kondisi 90%</td>
-                    <td><span class="badge badge-dark">Aktif</span></td>
+                    <td>{{ $no+1 }}</td>
+                    <td>{{ $data->nama_barang }}</td>
+                    <td>{{ $data->kategori->nama }}</td>
+                    <td>{{ $data->deskripsi }}</td>
+                    <td><span class="badge badge-dark">{{ $data->status }}</span></td>
                     <td><button class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
                       <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
                     </td>
                   </tr>
+                  @endforeach
                 </tbody>
                 </table>
                 <nav aria-label="Page navigation">
