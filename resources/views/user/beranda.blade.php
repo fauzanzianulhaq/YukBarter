@@ -32,7 +32,8 @@
             </div>
             <div class="card">
               <div class="card-header d-flex justify-content-between align-items-center">
-                <p class="flex-grow-1" mb-0>List Barang</p>
+                {{-- <p class="flex-grow-1" mb-0>List Barang</p> --}}
+                <h5>Daftar Barang</h5>
                 <a href="beranda/tambah"><button class="btn btn-outline-primary">
                   <i class="fas fa-plus"></i> Tambah Barang
                 </button></a>
