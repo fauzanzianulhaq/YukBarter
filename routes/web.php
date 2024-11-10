@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Models\Upload;
 use Symfony\Component\HttpFoundation\File\Exception\UploadException;
 
 /*
@@ -45,15 +47,22 @@ Route::get('/berandaUser', function () {
 // Route::get('/admin/dashboard', [SessionController::class, 'index'])->name('admin.dashboard')->middleware('role:admin');
 // Route::get('/user/dashboard', [SessionController::class, 'index'])->name('user.dashboard')->middleware('role:user');
 // Route::post('/custom-login', [SessionController::class, 'login'])->name('custom.login');
-Route::get('/admin/beranda', function () {
-    return view('admin.beranda');
-})->name('admin.beranda')->middleware('role:admin');
-Route::get('/admin/validasi', function () {
-    return view('admin.validasi');
-});
-Route::get('/admin/validasi-detail',  function () {
-    return view('admin.detail_validasi');
-});
+// Route::get('/admin/beranda', function () {
+//     return view('admin.beranda');
+// })->name('admin.beranda')->middleware('role:admin');
+Route::get('/admin/beranda', [AdminController::class, 'upload'])->name('admin.beranda')->middleware('role:admin');
+// Route::get('/admin/validasi', function () {
+//     return view('admin.validasi');
+// });
+Route::get('/admin/validasi', [AdminController::class, 'validasi'])->name('admin.validasi');
+
+Route::get('/admin/validasi-detail/{id}', function ($id) {
+    $barang = Upload::findOrFail($id);
+    return view('admin.detail_validasi', compact('barang'));
+})->name('admin.validasi-detail');
+Route::post('/admin/ubah-status', [AdminController::class, 'ubahStatus'])->name('admin.ubahStatus');
+
+
 
 
 Route::get('/admin/rating', function () {
@@ -96,7 +105,7 @@ Route::post('/user/beranda/tambah/submit', [UploadController::class, 'submit'])-
 Route::get('/user/beranda/tambah', [UploadController::class, 'create'])->name('user.create');
 Route::get('/user/beranda/edit/{id}', [UploadController::class, 'edit'])->name('upload.edit');
 Route::post('/user/beranda/update/{id}', [UploadController::class, 'update'])->name('upload.update');
-Route::post('/user/beranda/delete/{id}', [UploadController::class, 'delete'])->name('upload.delete');
+Route::delete('/user/beranda/delete/{id}', [UploadController::class, 'delete'])->name('upload.delete');
 Route::get('/user/beranda', [UserController::class, 'index'])->name('user.beranda');
 
 

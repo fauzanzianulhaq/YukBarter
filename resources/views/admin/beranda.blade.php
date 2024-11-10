@@ -37,21 +37,21 @@
             <div class="col-md-3">
               <div class="info-card">
                 <h5>Total User</h5>
-                <p>300</p>
+                <p>{{ $totalUsers }}</p>
                 <i class="fas fa-user"></i>
               </div>
             </div>
             <div class="col-md-3">
               <div class="info-card">
-                <h5>Barang Paling Banyak Diposting</h5>
-                <p>Buku</p>
-                <i class="fas fa-paper-plane"></i>
+                <h5>Total Kategori</h5>
+                <p>{{ $totalCategories }}</p>
+                <i class="fas fa-box"></i>
               </div>
             </div>
             <div class="col-md-3">
               <div class="info-card">
                 <h5>Kategori Barang Populer</h5>
-                <p>Elektronik</p>
+                <p>{{ $categoryName }}</p>
                 <i class="fas fa-box"></i>
               </div>
             </div>
@@ -61,28 +61,28 @@
             <div class="col-md-3">
               <div class="info-card">
                 <h5>Postingan Hari Ini</h5>
-                <p>100</p>
+                <p>{{ $todayPosts }}</p>
                 <i class="fas fa-paper-plane"></i>
               </div>
             </div>
             <div class="col-md-3">
               <div class="info-card">
                 <h5>Postingan Bulan Ini</h5>
-                <p>300</p>
+                <p>{{ $monthlyPosts }}</p>
                 <i class="fas fa-paper-plane"></i>
               </div>
             </div>
             <div class="col-md-3">
               <div class="info-card">
                 <h5>Postingan Tahun Ini</h5>
-                <p>1000</p>
+                <p>{{ $yearlyPosts }}</p>
                 <i class="fas fa-paper-plane"></i>
               </div>
             </div>
           </div>
   
           <div class="card">
-            <div class="card-header">Postingan Bulan Ini</div>
+            <div class="card-header">Postingan Hari Ini</div>
             <div class="card-body">
               <table class="table table-bordered">
                 <thead>
@@ -94,12 +94,14 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($upload as $no => $data)
                   <tr>
-                    <td>1</td>
-                    <td>SSD 14 GB</td>
-                    <td>Elektronik</td>
-                    <td>Fadil Nugroho</td>
+                    <td>{{ $no+1 }}</td>
+                    <td>{{ $data->nama_barang }}</td>
+                     <td>{{ $data->kategori->nama }}</td>
+                    <td>{{ $data->user->name }}</td>
                   </tr>
+                  @endforeach
                 </tbody>
               </table>
               <nav aria-label="Page navigation">

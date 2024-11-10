@@ -32,7 +32,6 @@
         </aside>
 
         <div class="main-content">
-
             <!-- Back Button - Positioned independently above the content -->
             <div class="back-button rounded-pill">
                 <button class="btn btn-dark" onclick="history.back()">Kembali</button>
@@ -46,32 +45,41 @@
                             <div class="row">
                                 <!-- Item Details Section -->
                                 <div class="col-md-8 item-details">
-                                    <p><strong>Nama User</strong> : Fadil Nugroho</p>
-                                    <p><strong>Nama Barang</strong> : SSD 14 GB</p>
-                                    <p><strong>Kategori</strong> : Elektronik</p>
-                                    <p><strong>Deskripsi</strong> : SSD 14 GB baru dipakai sebulan, masih bagus</p>
+                                    <p><strong>Nama User</strong> : {{ $barang->user->name ?? 'Tidak Ditemukan' }}</p>
+                                    <p><strong>Nama Barang</strong> : {{ $barang->nama_barang }}</p>
+                                    <p><strong>Kategori</strong> : {{ $barang->kategori->nama ?? 'Tidak Ada Kategori' }}</p>
+                                    <p><strong>Nomor Whatsapp</strong>: {{ $barang->nomor_wa }}</p>
+                                    <p><strong>Deskripsi</strong> : {{ $barang->deskripsi }}</p>
                                     
                                     <div class="action-buttons mt-3">
-                                        <button class="btn btn-danger">Tolak</button>
-                                        <button class="btn btn-success">Terima</button>
+                                        <!-- Form untuk mengubah status barang -->
+                                        <form action="{{ route('admin.ubahStatus') }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="barang_id" value="{{ $barang->id }}">
+                                            
+                                            <!-- Pilihan untuk mengubah status -->
+                                            <button type="submit" name="status" value="disetujui" class="btn btn-success">Terima</button>
+                                            <button type="submit" name="status" value="ditolak" class="btn btn-danger">Tolak</button>
+                                        </form>
                                     </div>
                                 </div>
 
                                 <!-- Image Section -->
                                 <div class="col-md-4">
-                                    <img src="https://via.placeholder.com/300" alt="SSD Image" class="img-fluid item-image">
+                                    <img src="{{ asset('storage/public/foto/' . $barang->foto) }}" alt="Image of {{ $barang->nama_barang }}" class="img-fluid item-image">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <footer class="text-center mt-4">
                 <p>&copy; 2024 All Right Reserved YukBarter.xyz</p>
-              </footer>
+            </footer>
         </div>
     </div>
-  
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

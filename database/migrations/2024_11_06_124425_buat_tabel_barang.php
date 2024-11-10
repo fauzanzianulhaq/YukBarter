@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('foto');
             $table->integer('status');
             $table->timestamps();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->enum('status', ['pending', 'disetujui', 'ditolak'])->default('pending');
         });
     }
 
