@@ -5,6 +5,8 @@ use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\UserController;
+use Symfony\Component\HttpFoundation\File\Exception\UploadException;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,6 +94,12 @@ Route::get('/admin/profile-password', function () {
 Route::get('/user/beranda', [UploadController::class, 'upload'])->name('user.beranda')->middleware('role:user');
 Route::post('/user/beranda/tambah/submit', [UploadController::class, 'submit'])->name('upload.submit');
 Route::get('/user/beranda/tambah', [UploadController::class, 'create'])->name('user.create');
+Route::get('/user/beranda/edit/{id}', [UploadController::class, 'edit'])->name('upload.edit');
+Route::post('/user/beranda/update/{id}', [UploadController::class, 'update'])->name('upload.update');
+Route::post('/user/beranda/delete/{id}', [UploadController::class, 'delete'])->name('upload.delete');
+Route::get('/user/beranda', [UserController::class, 'index'])->name('user.beranda');
+
+
 
 Route::get('/user/profile', function () {
     return view('user.profile');

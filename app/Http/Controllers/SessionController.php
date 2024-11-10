@@ -33,8 +33,33 @@ class SessionController extends Controller
 
     //     }
     //     }
-    public function login(Request $request)
+//     public function login(Request $request)
+// {
+//     $request->validate([
+//         'email' => 'required|email',
+//         'password' => 'required'
+//     ], [
+//         'email.required' => 'Email Wajib Diisi',
+//         'password.required' => 'Password Wajib Diisi',
+//     ]);
+
+//     $credentials = $request->only('email', 'password');
+
+//     if (Auth::attempt($credentials)) {
+//         $user = Auth::user();
+
+//         if ($user->role === 'admin') {
+//             return redirect()->route('admin.beranda');
+//         } else {
+//             return redirect()->route('user.beranda');
+//         }
+//     }
+
+//     return redirect()->back()->withErrors(['error' => 'Email atau password salah']);
+// }
+public function login(Request $request)
 {
+    // Validasi input
     $request->validate([
         'email' => 'required|email',
         'password' => 'required'
@@ -43,11 +68,15 @@ class SessionController extends Controller
         'password.required' => 'Password Wajib Diisi',
     ]);
 
+    // Ambil kredensial login dari input form
     $credentials = $request->only('email', 'password');
 
+    // Coba login dengan kredensial yang diberikan
     if (Auth::attempt($credentials)) {
+        // Ambil data user yang sedang login
         $user = Auth::user();
 
+        // Cek peran (role) pengguna dan arahkan ke halaman yang sesuai
         if ($user->role === 'admin') {
             return redirect()->route('admin.beranda');
         } else {
@@ -55,8 +84,10 @@ class SessionController extends Controller
         }
     }
 
+    // Jika login gagal
     return redirect()->back()->withErrors(['error' => 'Email atau password salah']);
 }
+
 
     }
 

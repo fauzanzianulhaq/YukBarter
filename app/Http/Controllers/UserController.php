@@ -1,13 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Upload;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function index()
-    {
-        return view('user.dashboard');
-    }
+{
+    // Ambil barang yang di-upload oleh user yang sedang login
+    $barangs = Upload::where('user_id', Auth::id())->get();
+
+    // Kirimkan data barang ke view
+    return view('user.beranda', compact('barangs'));
+}
+
+    
 }
