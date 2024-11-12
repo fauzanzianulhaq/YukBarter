@@ -7,6 +7,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
 use App\Models\Upload;
 use Symfony\Component\HttpFoundation\File\Exception\UploadException;
 
@@ -82,9 +83,11 @@ Route::post('/admin/kategori/tambah/submit', [KategoriController::class, 'submit
 Route::get('/admin/kategori/edit/{id}', [KategoriController::class, 'edit'])->name('kategori.edit');
 Route::post('/admin/kategori/update/{id}', [KategoriController::class, 'update'])->name('kategori.update');
 Route::post('/admin/kategori/delete/{id}', [KategoriController::class, 'delete'])->name('kategori.delete');
-Route::get('/admin/profile', function () {
-    return view('admin.profile');
-});
+// Route::get('/admin/profile', function () {
+//     return view('admin.profile');
+// });
+Route::get('/admin/profile', [ProfileController::class, 'profile'])->name('profile');
+Route::post('/profile/update-name', [ProfileController::class, 'updateName'])->name('profile.updateName');
 Route::get('/admin/profile-avatar', function () {
     return view('admin.avatar_profile');
 });
