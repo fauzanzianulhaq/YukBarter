@@ -66,7 +66,7 @@
 
                                 <!-- Image Section -->
                                 <div class="col-md-4">
-                                    <img src="{{ asset('storage/public/foto/' . $barang->foto) }}" alt="Image of {{ $barang->nama_barang }}" class="img-fluid item-image">
+                                    <img src="{{ asset('storage/' . $barang->foto) }}" alt="Image of {{ $barang->nama_barang }}" class="img-fluid item-image">
                                 </div>
                             </div>
                         </div>

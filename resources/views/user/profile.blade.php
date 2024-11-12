@@ -28,10 +28,10 @@
         <div class="profile-header">
           <div style="margin-right: 650px">
             <div class="profile-info" style="margin-right: 90px">
-                <img src="https://via.placeholder.com/80" alt="User Avatar" class="avatar">
+              <img src="{{ asset('storage/uploads/foto_ktm/' . $user->foto_ktm) }}" alt="Image of avatar">
                 <div class="profile-details">
-                    <h3>Fauzan Permana</h3>
-                    <p>alte123@gmail.com</p>
+                    <h3>{{ $user->name ?? 'Tidak Ada Nama' }}</h3>
+                    <p>{{ $user->email ?? 'Tidak Ada Email' }}</p>
                 </div>
             </div>
             <div class="profile-tabs">
@@ -44,19 +44,25 @@
         
         <div class="profile-content">
             <div class="left-section">
-                <p><strong>Nama</strong><br>Fauzan Permana</p>
-                <p><strong>Email</strong><br>alte123@gmail.com</p>
+                <p><strong>Nama</strong><br>{{ $user->name ?? 'Tidak Ada Nama' }}</p>
+                <p><strong>Email</strong><br>{{ $user->email ?? 'Tidak Ada Email' }}</p>
+                <form action="{{ route('logout') }}" method="POST">
+                  @csrf
+                <div class="button-group">
+                  <button class="resett-button">Logout</button>
+              </div>
+                </form>
             </div>
             
             <div class="right-section">
-                <label for="name">Nama</label>
-                <input type="text" id="name" value="Fadli Permana">
-                
-                <div class="button-group">
-                    <button class="reset-button">Reset</button>
-                    <button class="cancel-button">Batal</button>
-                    <button class="save-button">Simpan</button>
+              <form action="{{ route('profile.updateName') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label for="name">Nama</label>
+                    <input type="text" name="name" class="form-control" value="{{ auth()->user()->name }}" required>
                 </div>
+                <button class="save-button" type="submit">Simpan</button>
+            </form>
             </div>
         </div>
     </div>

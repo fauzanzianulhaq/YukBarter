@@ -52,10 +52,12 @@
             <div class="left-section">
                 <p><strong>Nama</strong><br>{{ $admin->name ?? 'Tidak Ada Nama' }}</p>
                 <p><strong>Email</strong><br>{{ $admin->email ?? 'Tidak Ada Email' }}</p>
-                
+                <form action="{{ route('logout') }}" method="POST">
+                  @csrf
                 <div class="button-group">
                   <button class="resett-button">Logout</button>
               </div>
+                </form>
             </div>
             
             <div class="right-section">

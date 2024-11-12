@@ -36,8 +36,8 @@
             <div class="profile-info" style="margin-right: 90px">
                 <img src="https://via.placeholder.com/80" alt="User Avatar" class="avatar">
                 <div class="profile-details">
-                    <h3>Fadli Permana</h3>
-                    <p>fadli123@gmail.com</p>
+                    <h3>{{ $admin->name ?? 'Tidak Ada Nama' }}</h3>
+                    <p>{{ $admin->email ?? 'Tidak Ada Email' }}</p>
                 </div>
             </div>
             <div class="profile-tabs">
@@ -45,46 +45,51 @@
                 <a href="profile-avatar"><button class="tab">Avatar</button></a>
                 <button class="tab active">Ubah Password</button>
             </div>
-        </div>
+          </div>
         </div>
         
         <div class="profile-content">
             <div class="left-section">
-                <p><strong>Nama</strong><br>Fadli Permana</p>
-                <p><strong>Email</strong><br>fadli123@gmail.com</p>
+                <p><strong>Nama</strong><br>{{ $admin->name ?? 'Tidak Ada Nama' }}</p>
+                <p><strong>Email</strong><br>{{ $admin->email ?? 'Tidak Ada Email' }}</p>
+                <form action="{{ route('logout') }}" method="POST">
+                  @csrf
                 <div class="button-group">
-                  <button class="resett-button">Logout</button>
-              </div>
+                    <button class="resett-button">Logout</button>
+                </div>
+                </form>
             </div>
             
             <div class="right-section">
-                <div class="form-container">
-                    <div class="input-group">
-                        <label for="current-password">Password Saat Ini</label>
-                        <input type="password" id="current-password" placeholder="Password Saat Ini">
+                <!-- Form untuk Reset Password -->
+                <form action="{{ route('updatePassword') }}" method="POST">
+                    @csrf
+                    <div class="form-container">
+                        <div class="input-group">
+                            <label for="current-password">Password Saat Ini</label>
+                            <input type="password" id="current-password" name="current_password" placeholder="Password Saat Ini" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="new-password">Password Baru</label>
+                            <input type="password" id="new-password" name="new_password" placeholder="Password Baru" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="confirm-password">Konfirmasi Password</label>
+                            <input type="password" id="confirm-password" name="new_password_confirmation" placeholder="Konfirmasi Password" required>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <label for="new-password">Password Baru</label>
-                        <input type="password" id="new-password" placeholder="Password Baru">
+                    
+                    <div class="button-container" style="margin-right: 260px">
+                        <button type="button" class="button cancel">Batal</button>
+                        <button type="submit" class="button save">Simpan</button>
                     </div>
-                    <div class="input-group">
-                        <label for="new-password">Konfirmasi Password</label>
-                        <input type="password" id="new-password" placeholder="Konfirmasi Password">
-                    </div>
-                </div>
-                
-                <div class="button-container" style="margin-right: 260px">
-                    <button class="button cancel">Batal</button>
-                    <button class="button save">Simpan</button>
-                </div>
+                </form>
             </div>
         </div>
-    </div>
-      
     </div>
   
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>

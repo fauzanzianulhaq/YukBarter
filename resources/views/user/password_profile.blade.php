@@ -30,8 +30,8 @@
             <div class="profile-info" style="margin-right: 90px">
                 <img src="https://via.placeholder.com/80" alt="User Avatar" class="avatar">
                 <div class="profile-details">
-                    <h3>Fauzan Permana</h3>
-                    <p>alte123@gmail.com</p>
+                    <h3>{{ $user->name ?? 'Tidak Ada Nama' }}</h3>
+                    <p>{{ $user->email ?? 'Tidak Ada Email' }}</p>
                 </div>
             </div>
             <div class="profile-tabs">
@@ -44,32 +44,41 @@
         
         <div class="profile-content">
             <div class="left-section">
-                <p><strong>Nama</strong><br>Fauzan Permana</p>
-                <p><strong>Email</strong><br>alte123@gmail.com</p>
+                <p><strong>Nama</strong><br>{{ $user->name ?? 'Tidak Ada Nama' }}</p>
+                <p><strong>Email</strong><br>{{ $user->email ?? 'Tidak Ada Email' }}</p>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                  <div class="button-group">
+                    <button class="resett-button">Logout</button>
+                </div>
+                  </form>
             </div>
             
             <div class="right-section">
-                <div class="form-container">
-                    <div class="input-group">
-                        <label for="current-password">Password Saat Ini</label>
-                        <input type="password" id="current-password" placeholder="Password Saat Ini">
+                <!-- Form untuk Reset Password -->
+                <form action="{{ route('updatePasswordUser') }}" method="POST">
+                    @csrf
+                    <div class="form-container">
+                        <div class="input-group">
+                            <label for="current-password">Password Saat Ini</label>
+                            <input type="password" id="current-password" name="current_password" placeholder="Password Saat Ini" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="new-password">Password Baru</label>
+                            <input type="password" id="new-password" name="new_password" placeholder="Password Baru" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="confirm-password">Konfirmasi Password</label>
+                            <input type="password" id="confirm-password" name="new_password_confirmation" placeholder="Konfirmasi Password" required>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <label for="new-password">Password Baru</label>
-                        <input type="password" id="new-password" placeholder="Password Baru">
+                    
+                    <div class="button-container" style="margin-right: 260px">
+                        <button type="button" class="button cancel">Batal</button>
+                        <button type="submit" class="button save">Simpan</button>
                     </div>
-                    <div class="input-group">
-                        <label for="new-password">Konfirmasi Password</label>
-                        <input type="password" id="new-password" placeholder="Konfirmasi Password">
-                    </div>
-                </div>
-                
-                <div class="button-container" style="margin-right: 260px">
-                    <button class="button cancel">Batal</button>
-                    <button class="button save">Simpan</button>
-                </div>
+                </form>
             </div>
-        </div>
     </div>
       
     </div>

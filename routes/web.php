@@ -87,13 +87,18 @@ Route::post('/admin/kategori/delete/{id}', [KategoriController::class, 'delete']
 //     return view('admin.profile');
 // });
 Route::get('/admin/profile', [ProfileController::class, 'profile'])->name('profile');
+Route::get('/admin/profile-password', [ProfileController::class, 'password'])->name('password');
+Route::get('/admin/profile-avatar', [ProfileController::class, 'avatar'])->name('avatar');
+Route::post('/admin/update-password', [ProfileController::class, 'updatePassword'])->name('updatePassword');
 Route::post('/profile/update-name', [ProfileController::class, 'updateName'])->name('profile.updateName');
-Route::get('/admin/profile-avatar', function () {
-    return view('admin.avatar_profile');
-});
-Route::get('/admin/profile-password', function () {
-    return view('admin.password_profile');
-});
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Route::get('/admin/profile-avatar', function () {
+//     return view('admin.avatar_profile');
+// });
+// Route::get('/admin/profile-password', function () {
+//     return view('admin.password_profile');
+// });
 
 
 // USER
@@ -113,15 +118,20 @@ Route::get('/user/beranda', [UserController::class, 'index'])->name('user.berand
 
 
 
-Route::get('/user/profile', function () {
-    return view('user.profile');
-});
-Route::get('/user/profile-avatar', function () {
-    return view('user.avatar_profile');
-});
-Route::get('/user/profile-password', function () {
-    return view('user.password_profile');
-});
+// Route::get('/user/profile', function () {
+//     return view('user.profile');
+// });
+Route::get('/user/profile', [ProfileController::class, 'profileUser'])->name('profileUser');
+Route::get('/user/profile-avatar', [ProfileController::class, 'avatarUser'])->name('avatarUser');
+Route::get('/user/profile-password', [ProfileController::class, 'passwordUser'])->name('passwordUser');
+Route::post('/profile/update-name-user', [ProfileController::class, 'updateNameUser'])->name('profile.updateNameUser');
+Route::post('/admin/update-password-user', [ProfileController::class, 'updatePasswordUser'])->name('updatePasswordUser');
+// Route::get('/user/profile-avatar', function () {
+//     return view('user.avatar_profile');
+// });
+// Route::get('/user/profile-password', function () {
+//     return view('user.password_profile');
+// });
 Route::get('/user/jelajahi-barang', function () {
     return view('user.jelajahiBarang');
 });

@@ -30,8 +30,8 @@
             <div class="profile-info" style="margin-right: 90px">
                 <img src="https://via.placeholder.com/80" alt="User Avatar" class="avatar">
                 <div class="profile-details">
-                    <h3>Fauzan Permana</h3>
-                    <p>alte123@gmail.com</p>
+                    <h3>{{ $user->name ?? 'Tidak Ada Nama' }}</h3>
+                    <p>{{ $user->email ?? 'Tidak Ada Email' }}</p>
                 </div>
             </div>
             <div class="profile-tabs">
@@ -44,8 +44,14 @@
         
         <div class="profile-content">
             <div class="left-section">
-                <p><strong>Nama</strong><br>Fauzan Permana</p>
-                <p><strong>Email</strong><br>alte123@gmail.com</p>
+                <p><strong>Nama</strong><br>{{ $user->name ?? 'Tidak Ada Nama' }}</p>
+                <p><strong>Email</strong><br>{{ $user->email ?? 'Tidak Ada Email' }}</p>
+                <form action="{{ route('logout') }}" method="POST">
+                  @csrf
+                <div class="button-group">
+                  <button class="resett-button">Logout</button>
+              </div>
+                </form>
             </div>
             
             <div class="right-section">

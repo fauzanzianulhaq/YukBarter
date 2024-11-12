@@ -15,6 +15,14 @@
     text-align: left;
     padding: 15px;
   }
+  .resett-button {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
   
   .sidebar .nav-link {
     font-size: 1.1rem;
