@@ -34,12 +34,12 @@
         <div class="profile-header">
           <div style="margin-right: 650px">
             <div class="profile-info" style="margin-right: 90px">
-                <img src="https://via.placeholder.com/80" alt="User Avatar" class="avatar">
-                <div class="profile-details">
-                    <h3>{{ $admin->name ?? 'Tidak Ada Nama' }}</h3>
-                    <p>{{ $admin->email ?? 'Tidak Ada Email' }}</p>
-                </div>
-            </div>
+              <img src="https://via.placeholder.com/80" alt="User Avatar" class="avatar">
+              <div class="profile-details">
+                  <h3>{{ $admin->name ?? 'Tidak Ada Nama' }}</h3>
+                  <p>{{ $admin->email ?? 'Tidak Ada Email' }}</p>
+              </div>
+          </div>
             <div class="profile-tabs">
                 <button class="tab active">Profil</button>
                 <a href="profile-avatar"><button class="tab">Avatar</button></a>
