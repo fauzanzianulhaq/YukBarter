@@ -67,10 +67,11 @@ public function validasi()
 }
 public function ubahStatus(Request $request)
 {
-    // Validasi apakah barang_id dan status ada dalam request
+    // Validasi apakah barang_id, status, dan rating ada dalam request
     $request->validate([
         'barang_id' => 'required|exists:barang,id',
         'status' => 'required|in:disetujui,ditolak',
+        'rating' => 'nullable|integer|min:1|max:5', // Validasi rating antara 1 dan 5, opsional
     ]);
 
     // Temukan barang berdasarkan ID
@@ -78,10 +79,17 @@ public function ubahStatus(Request $request)
 
     // Ubah status barang
     $barang->status = $request->input('status');
+
+    // Jika rating disediakan, simpan rating
+    if ($request->has('rating')) {
+        $barang->rating = $request->input('rating');
+    }
+
+    // Simpan perubahan
     $barang->save();
 
     // Redirect dengan pesan sukses
-    return redirect()->route('admin.validasi')->with('success', 'Status barang berhasil diubah');
+    return redirect()->route('admin.validasi')->with('success', 'Status dan rating barang berhasil diubah');
 }
 
 

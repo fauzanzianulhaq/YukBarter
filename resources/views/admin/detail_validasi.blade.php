@@ -7,29 +7,42 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="/css/detail_validasi.css">
+    <style>
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Space between the buttons and rating input */
+        }
+        .action-buttons input {
+            margin-bottom: 10px; /* Space below the rating input */
+        }
+        .card-body {
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="main-container">
-        <aside class="sidebar bg-light border-right">
+        <div class="sidebar bg-light border-right">
             <h4 class="p-3">YukBarter</h4>
             <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link" href="beranda"><i class="fas fa-home"></i> Beranda</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="validasi"><i class="fas fa-tasks"></i> Validasi</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="kategori"><i class="fas fa-th-large"></i> Kategori</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="rating"><i class="fas fa-star"></i> Rating</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="profile"><i class="fas fa-user"></i> Profil</a>
-                </li>
-              </ul>
-        </aside>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.beranda') }}"><i class="fas fa-home"></i> Beranda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.validasi') }}"><i class="fas fa-tasks"></i> Validasi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="kategori"><i class="fas fa-th-large"></i> Kategori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="rating"><i class="fas fa-star"></i> Rating</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="profile"><i class="fas fa-user"></i> Profil</a>
+              </li>
+            </ul>
+          </div>
 
         <div class="main-content">
             <!-- Back Button - Positioned independently above the content -->
@@ -56,7 +69,9 @@
                                         <form action="{{ route('admin.ubahStatus') }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="barang_id" value="{{ $barang->id }}">
-                                            
+                                            <label for="rating">Rating Kualitas Barang</label>
+                                            <input type="number" id="rating" name="rating" min="1" max="5" value="{{ $barang->rating ?? '' }}" class="form-control mb-3">
+
                                             <!-- Pilihan untuk mengubah status -->
                                             <button type="submit" name="status" value="disetujui" class="btn btn-success">Terima</button>
                                             <button type="submit" name="status" value="ditolak" class="btn btn-danger">Tolak</button>
@@ -66,7 +81,7 @@
 
                                 <!-- Image Section -->
                                 <div class="col-md-4">
-                                    <img src="{{ asset('storage/' . $barang->foto) }}" alt="Image of {{ $barang->nama_barang }}" class="img-fluid item-image">
+                                    <img src="{{ asset('storage/foto/' . $barang->foto) }}" alt="Image of {{ $barang->nama_barang }}" class="img-fluid item-image">
                                 </div>
                             </div>
                         </div>

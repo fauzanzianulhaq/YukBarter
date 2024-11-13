@@ -132,9 +132,11 @@ Route::post('/admin/update-password-user', [ProfileController::class, 'updatePas
 // Route::get('/user/profile-password', function () {
 //     return view('user.password_profile');
 // });
-Route::get('/user/jelajahi-barang', function () {
-    return view('user.jelajahiBarang');
-});
+// Route::get('/user/jelajahi-barang', function () {
+//     return view('user.jelajahiBarang');
+// });
+Route::get('/user/jelajahi-barang', [UserController::class, 'jelajahiBarang'])->name('jelajahiBarang');
+
 Route::get('/user/jelajahi-barang-detail', function () {
     return view('user.detailBarang');
 });
